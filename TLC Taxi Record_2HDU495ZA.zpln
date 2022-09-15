@@ -1,0 +1,1522 @@
+{
+  "paragraphs": [
+    {
+      "text": "from pyspark.sql import SparkSession\n\nspark \u003d SparkSession.builder.getOrCreate()",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:42:51.954",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663228208707_213117385",
+      "id": "paragraph_1663228208707_213117385",
+      "dateCreated": "2022-09-15 16:50:08.707",
+      "dateStarted": "2022-09-16 01:42:51.970",
+      "dateFinished": "2022-09-16 01:42:59.705",
+      "status": "FINISHED"
+    },
+    {
+      "text": "DATA_HOME \u003d \"../../data/tlc_taxi_record\"\nDATA_PATH \u003d DATA_HOME + \"/fhvhv_tripdata_2022-01.parquet\"",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:42:59.784",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663228240230_628546284",
+      "id": "paragraph_1663228240230_628546284",
+      "dateCreated": "2022-09-15 16:50:40.230",
+      "dateStarted": "2022-09-16 01:42:59.798",
+      "dateFinished": "2022-09-16 01:42:59.817",
+      "status": "FINISHED"
+    },
+    {
+      "text": "df \u003d spark.read.parquet(DATA_PATH)\ndf.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:42:59.897",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- hvfhs_license_num: string (nullable \u003d true)\n |-- dispatching_base_num: string (nullable \u003d true)\n |-- originating_base_num: string (nullable \u003d true)\n |-- request_datetime: timestamp (nullable \u003d true)\n |-- on_scene_datetime: timestamp (nullable \u003d true)\n |-- pickup_datetime: timestamp (nullable \u003d true)\n |-- dropoff_datetime: timestamp (nullable \u003d true)\n |-- PULocationID: long (nullable \u003d true)\n |-- DOLocationID: long (nullable \u003d true)\n |-- trip_miles: double (nullable \u003d true)\n |-- trip_time: long (nullable \u003d true)\n |-- base_passenger_fare: double (nullable \u003d true)\n |-- tolls: double (nullable \u003d true)\n |-- bcf: double (nullable \u003d true)\n |-- sales_tax: double (nullable \u003d true)\n |-- congestion_surcharge: double (nullable \u003d true)\n |-- airport_fee: double (nullable \u003d true)\n |-- tips: double (nullable \u003d true)\n |-- driver_pay: double (nullable \u003d true)\n |-- shared_request_flag: string (nullable \u003d true)\n |-- shared_match_flag: string (nullable \u003d true)\n |-- access_a_ride_flag: string (nullable \u003d true)\n |-- wav_request_flag: string (nullable \u003d true)\n |-- wav_match_flag: string (nullable \u003d true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663228345997_664731108",
+      "id": "paragraph_1663228345997_664731108",
+      "dateCreated": "2022-09-15 16:52:25.997",
+      "dateStarted": "2022-09-16 01:42:59.902",
+      "dateFinished": "2022-09-16 01:43:03.415",
+      "status": "FINISHED"
+    },
+    {
+      "text": "df.count()",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:03.507",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "14751591\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663228367069_1277781830",
+      "id": "paragraph_1663228367069_1277781830",
+      "dateCreated": "2022-09-15 16:52:47.069",
+      "dateStarted": "2022-09-16 01:43:03.512",
+      "dateFinished": "2022-09-16 01:43:04.658",
+      "status": "FINISHED"
+    },
+    {
+      "text": "df.show()",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:04.714",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+--------------------+--------------------+-------------------+-------------------+-------------------+-------------------+------------+------------+----------+---------+-------------------+-----+----+---------+--------------------+-----------+----+----------+-------------------+-----------------+------------------+----------------+--------------+\n|hvfhs_license_num|dispatching_base_num|originating_base_num|   request_datetime|  on_scene_datetime|    pickup_datetime|   dropoff_datetime|PULocationID|DOLocationID|trip_miles|trip_time|base_passenger_fare|tolls| bcf|sales_tax|congestion_surcharge|airport_fee|tips|driver_pay|shared_request_flag|shared_match_flag|access_a_ride_flag|wav_request_flag|wav_match_flag|\n+-----------------+--------------------+--------------------+-------------------+-------------------+-------------------+-------------------+------------+------------+----------+---------+-------------------+-----+----+---------+--------------------+-----------+----+----------+-------------------+-----------------+------------------+----------------+--------------+\n|           HV0003|              B03404|              B03404|2022-01-01 09:05:31|2022-01-01 09:05:40|2022-01-01 09:07:24|2022-01-01 09:18:28|         170|         161|      1.18|      664|               24.9|  0.0|0.75|     2.21|                2.75|        0.0| 0.0|     23.03|                  N|                N|                  |               N|             N|\n|           HV0003|              B03404|              B03404|2022-01-01 09:19:27|2022-01-01 09:22:08|2022-01-01 09:22:32|2022-01-01 09:30:12|         237|         161|      0.82|      460|              11.97|  0.0|0.36|     1.06|                2.75|        0.0| 0.0|     12.32|                  N|                N|                  |               N|             N|\n|           HV0003|              B03404|              B03404|2022-01-01 09:43:53|2022-01-01 09:57:37|2022-01-01 09:57:37|2022-01-01 10:07:32|         237|         161|      1.18|      595|              29.82|  0.0|0.89|     2.65|                2.75|        0.0| 0.0|      23.3|                  N|                N|                  |               N|             N|\n|           HV0003|              B03404|              B03404|2022-01-01 09:15:36|2022-01-01 09:17:08|2022-01-01 09:18:02|2022-01-01 09:23:05|         262|         229|      1.65|      303|               7.91|  0.0|0.24|      0.7|                2.75|        0.0| 0.0|       6.3|                  N|                N|                  |               N|             N|\n|           HV0003|              B03404|              B03404|2022-01-01 09:25:45|2022-01-01 09:26:01|2022-01-01 09:28:01|2022-01-01 09:35:42|         229|         141|      1.65|      461|               9.44|  0.0|0.28|     0.84|                2.75|        0.0| 0.0|      7.44|                  N|                N|                  |               N|             N|\n|           HV0003|              B03404|              B03404|2022-01-01 09:34:44|2022-01-01 09:36:52|2022-01-01 09:38:50|2022-01-01 09:51:32|         263|          79|      4.51|      762|              17.67|  0.0|0.53|     1.57|                2.75|        0.0| 0.0|     12.25|                  N|                N|                  |               N|             N|\n|           HV0003|              B03404|              B03404|2022-01-01 09:47:51|2022-01-01 09:52:00|2022-01-01 09:53:25|2022-01-01 10:08:56|         113|         140|      3.68|      931|              16.68|  0.0| 0.5|     1.48|                2.75|        0.0| 0.0|     12.75|                  N|                N|                  |               N|             N|\n|           HV0003|              B03404|              B03404|2022-01-01 09:06:21|2022-01-01 09:06:58|2022-01-01 09:08:58|2022-01-01 09:23:01|         151|          75|      2.77|      843|              14.41|  0.0|0.43|     1.28|                 0.0|        0.0| 4.0|     11.47|                  N|                N|                  |               N|             N|\n|           HV0003|              B03404|              B03404|2022-01-01 09:27:54|2022-01-01 09:30:26|2022-01-01 09:32:25|2022-01-01 09:44:15|         263|         229|      2.04|      710|              10.64|  0.0|0.32|     0.94|                2.75|        0.0| 0.0|      9.55|                  N|                N|                  |               N|             N|\n|           HV0003|              B03404|              B03404|2022-01-01 09:44:59|2022-01-01 09:48:23|2022-01-01 09:50:23|2022-01-01 10:15:30|         237|         169|      8.79|     1507|             107.56|  0.0|0.83|     2.45|                2.75|        0.0| 0.0|     23.67|                  N|                N|                  |               N|             N|\n|           HV0003|              B03404|              B03404|2022-01-01 09:13:49|2022-01-01 09:16:15|2022-01-01 09:17:02|2022-01-01 09:40:09|         261|         223|     11.29|     1387|               34.9|  0.0|1.05|      3.1|                2.75|        0.0| 0.0|     25.17|                  N|                N|                  |               N|             N|\n|           HV0003|              B03404|              B03404|2022-01-01 09:39:10|2022-01-01 09:42:59|2022-01-01 09:43:20|2022-01-01 09:47:31|         223|         223|      0.87|      251|               7.91|  0.0|0.24|      0.7|                 0.0|        0.0| 0.0|      6.51|                  N|                N|                  |               N|             N|\n|           HV0003|              B03404|              B03404|2022-01-01 09:45:50|2022-01-01 09:52:15|2022-01-01 09:52:29|2022-01-01 10:01:48|         223|           7|      1.89|      559|               9.71|  0.0|0.29|     0.86|                 0.0|        0.0| 0.0|      7.89|                  N|                N|                  |               N|             N|\n|           HV0005|              B03406|                null|2022-01-01 09:36:54|               null|2022-01-01 09:45:34|2022-01-01 09:54:11|          88|         148|     3.585|      810|              27.02|  0.0|0.81|      2.4|                2.75|        0.0| 0.0|     21.08|                  N|                N|                 N|               N|             N|\n|           HV0003|              B03404|              B03404|2022-01-01 09:07:13|2022-01-01 09:12:03|2022-01-01 09:12:03|2022-01-01 09:35:07|         246|         243|       9.2|     1384|              30.37|  0.0|0.91|      2.7|                2.75|        0.0| 0.0|     22.69|                  N|                N|                  |               N|             N|\n|           HV0003|              B03404|              B03404|2022-01-01 09:53:32|2022-01-01 09:58:14|2022-01-01 09:58:26|2022-01-01 10:07:23|         243|         127|      1.88|      537|              15.02|  0.0|0.45|     1.33|                 0.0|        0.0| 2.0|     10.02|                  N|                N|                  |               N|             N|\n|           HV0005|              B03406|                null|2022-01-01 09:28:07|               null|2022-01-01 09:34:59|2022-01-01 09:50:15|         239|         170|     2.699|      916|              20.47|  0.0|0.61|     1.82|                2.75|        0.0| 0.0|     10.66|                  N|                N|                 N|               N|             N|\n|           HV0005|              B03406|                null|2022-01-01 09:45:44|               null|2022-01-01 09:58:09|2022-01-01 10:28:23|         170|         265|     8.037|     1904|              24.63| 20.0|1.34|      0.0|                 0.0|        0.0| 0.0|     26.63|                  N|                N|                 N|               N|             N|\n|           HV0003|              B03404|              B03404|2022-01-01 09:21:54|2022-01-01 09:26:15|2022-01-01 09:28:15|2022-01-01 09:38:52|         223|         179|      1.69|      637|               9.81|  0.0|0.29|     0.87|                 0.0|        0.0| 0.0|      9.55|                  N|                N|                  |               N|             N|\n|           HV0003|              B03404|              B03404|2022-01-01 09:35:08|2022-01-01 09:43:55|2022-01-01 09:45:55|2022-01-01 09:53:47|         179|           7|      0.87|      472|              10.53|  0.0|0.32|     0.93|                 0.0|        0.0| 0.0|      9.22|                  N|                N|                  |               N|             N|\n+-----------------+--------------------+--------------------+-------------------+-------------------+-------------------+-------------------+------------+------------+----------+---------+-------------------+-----+----+---------+--------------------+-----------+----+----------+-------------------+-----------------+------------------+----------------+--------------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663228376221_126792278",
+      "id": "paragraph_1663228376221_126792278",
+      "dateCreated": "2022-09-15 16:52:56.221",
+      "dateStarted": "2022-09-16 01:43:04.719",
+      "dateFinished": "2022-09-16 01:43:06.595",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\n# PreProcessing",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:06.623",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003ePreProcessing\u003c/h1\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663249492161_1087781505",
+      "id": "paragraph_1663249492161_1087781505",
+      "dateCreated": "2022-09-15 22:44:52.161",
+      "dateStarted": "2022-09-16 01:43:06.642",
+      "dateFinished": "2022-09-16 01:43:08.953",
+      "status": "FINISHED"
+    },
+    {
+      "text": "from pyspark.sql.functions import split\n\nselected_df \u003d df.select(\n    \u0027hvfhs_license_num\u0027, \n    \u0027dispatching_base_num\u0027, \n    split(\u0027pickup_datetime\u0027, \u0027 \u0027)[0].alias(\u0027pickup_date\u0027), \n    split(\u0027pickup_datetime\u0027, \u0027 \u0027)[1].alias(\u0027pickup_time\u0027), \n    split(\u0027dropoff_datetime\u0027, \u0027 \u0027)[0].alias(\u0027dropoff_date\u0027),\n    split(\u0027dropoff_datetime\u0027, \u0027 \u0027)[1].alias(\u0027dropoff_time\u0027),\n    \u0027PULocationID\u0027,\n    \u0027DOLocationID\u0027, \n    \u0027trip_miles\u0027, \n    \u0027trip_time\u0027,\n    \u0027driver_pay\u0027\n)\nselected_df.show()",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:09.047",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+--------------------+-----------+-----------+------------+------------+------------+------------+----------+---------+----------+\n|hvfhs_license_num|dispatching_base_num|pickup_date|pickup_time|dropoff_date|dropoff_time|PULocationID|DOLocationID|trip_miles|trip_time|driver_pay|\n+-----------------+--------------------+-----------+-----------+------------+------------+------------+------------+----------+---------+----------+\n|           HV0003|              B03404| 2022-01-01|   09:07:24|  2022-01-01|    09:18:28|         170|         161|      1.18|      664|     23.03|\n|           HV0003|              B03404| 2022-01-01|   09:22:32|  2022-01-01|    09:30:12|         237|         161|      0.82|      460|     12.32|\n|           HV0003|              B03404| 2022-01-01|   09:57:37|  2022-01-01|    10:07:32|         237|         161|      1.18|      595|      23.3|\n|           HV0003|              B03404| 2022-01-01|   09:18:02|  2022-01-01|    09:23:05|         262|         229|      1.65|      303|       6.3|\n|           HV0003|              B03404| 2022-01-01|   09:28:01|  2022-01-01|    09:35:42|         229|         141|      1.65|      461|      7.44|\n|           HV0003|              B03404| 2022-01-01|   09:38:50|  2022-01-01|    09:51:32|         263|          79|      4.51|      762|     12.25|\n|           HV0003|              B03404| 2022-01-01|   09:53:25|  2022-01-01|    10:08:56|         113|         140|      3.68|      931|     12.75|\n|           HV0003|              B03404| 2022-01-01|   09:08:58|  2022-01-01|    09:23:01|         151|          75|      2.77|      843|     11.47|\n|           HV0003|              B03404| 2022-01-01|   09:32:25|  2022-01-01|    09:44:15|         263|         229|      2.04|      710|      9.55|\n|           HV0003|              B03404| 2022-01-01|   09:50:23|  2022-01-01|    10:15:30|         237|         169|      8.79|     1507|     23.67|\n|           HV0003|              B03404| 2022-01-01|   09:17:02|  2022-01-01|    09:40:09|         261|         223|     11.29|     1387|     25.17|\n|           HV0003|              B03404| 2022-01-01|   09:43:20|  2022-01-01|    09:47:31|         223|         223|      0.87|      251|      6.51|\n|           HV0003|              B03404| 2022-01-01|   09:52:29|  2022-01-01|    10:01:48|         223|           7|      1.89|      559|      7.89|\n|           HV0005|              B03406| 2022-01-01|   09:45:34|  2022-01-01|    09:54:11|          88|         148|     3.585|      810|     21.08|\n|           HV0003|              B03404| 2022-01-01|   09:12:03|  2022-01-01|    09:35:07|         246|         243|       9.2|     1384|     22.69|\n|           HV0003|              B03404| 2022-01-01|   09:58:26|  2022-01-01|    10:07:23|         243|         127|      1.88|      537|     10.02|\n|           HV0005|              B03406| 2022-01-01|   09:34:59|  2022-01-01|    09:50:15|         239|         170|     2.699|      916|     10.66|\n|           HV0005|              B03406| 2022-01-01|   09:58:09|  2022-01-01|    10:28:23|         170|         265|     8.037|     1904|     26.63|\n|           HV0003|              B03404| 2022-01-01|   09:28:15|  2022-01-01|    09:38:52|         223|         179|      1.69|      637|      9.55|\n|           HV0003|              B03404| 2022-01-01|   09:45:55|  2022-01-01|    09:53:47|         179|           7|      0.87|      472|      9.22|\n+-----------------+--------------------+-----------+-----------+------------+------------+------------+------------+----------+---------+----------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663239987917_2041100797",
+      "id": "paragraph_1663239987917_2041100797",
+      "dateCreated": "2022-09-15 20:06:27.919",
+      "dateStarted": "2022-09-16 01:43:09.064",
+      "dateFinished": "2022-09-16 01:43:09.628",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\n## Uber Data Analytics",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:09.665",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eUber Data Analytics\u003c/h2\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663249787924_1212066951",
+      "id": "paragraph_1663249787924_1212066951",
+      "dateCreated": "2022-09-15 22:49:47.924",
+      "dateStarted": "2022-09-16 01:43:09.670",
+      "dateFinished": "2022-09-16 01:43:09.679",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\nhvfhs_license_num\n- HV0002: Juno\n- HV0003: Uber\n- HV0004: Via\n- HV0005: Lyft",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:09.770",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003ehvfhs_license_num\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eHV0002: Juno\u003c/li\u003e\n\u003cli\u003eHV0003: Uber\u003c/li\u003e\n\u003cli\u003eHV0004: Via\u003c/li\u003e\n\u003cli\u003eHV0005: Lyft\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663228390705_447081862",
+      "id": "paragraph_1663228390705_447081862",
+      "dateCreated": "2022-09-15 16:53:10.705",
+      "dateStarted": "2022-09-16 01:43:09.775",
+      "dateFinished": "2022-09-16 01:43:09.787",
+      "status": "FINISHED"
+    },
+    {
+      "text": "uber_df \u003d selected_df.filter(df[\u0027hvfhs_license_num\u0027] \u003d\u003d \"HV0003\") # Uber\nuber_df.count()",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:09.875",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "editorHide": false,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "10826336\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663228448736_1472556184",
+      "id": "paragraph_1663228448736_1472556184",
+      "dateCreated": "2022-09-15 16:54:08.736",
+      "dateStarted": "2022-09-16 01:43:09.879",
+      "dateFinished": "2022-09-16 01:43:11.012",
+      "status": "FINISHED"
+    },
+    {
+      "text": "uber_df.show()",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:11.080",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+--------------------+-----------+-----------+------------+------------+------------+------------+----------+---------+----------+\n|hvfhs_license_num|dispatching_base_num|pickup_date|pickup_time|dropoff_date|dropoff_time|PULocationID|DOLocationID|trip_miles|trip_time|driver_pay|\n+-----------------+--------------------+-----------+-----------+------------+------------+------------+------------+----------+---------+----------+\n|           HV0003|              B03404| 2022-01-01|   09:07:24|  2022-01-01|    09:18:28|         170|         161|      1.18|      664|     23.03|\n|           HV0003|              B03404| 2022-01-01|   09:22:32|  2022-01-01|    09:30:12|         237|         161|      0.82|      460|     12.32|\n|           HV0003|              B03404| 2022-01-01|   09:57:37|  2022-01-01|    10:07:32|         237|         161|      1.18|      595|      23.3|\n|           HV0003|              B03404| 2022-01-01|   09:18:02|  2022-01-01|    09:23:05|         262|         229|      1.65|      303|       6.3|\n|           HV0003|              B03404| 2022-01-01|   09:28:01|  2022-01-01|    09:35:42|         229|         141|      1.65|      461|      7.44|\n|           HV0003|              B03404| 2022-01-01|   09:38:50|  2022-01-01|    09:51:32|         263|          79|      4.51|      762|     12.25|\n|           HV0003|              B03404| 2022-01-01|   09:53:25|  2022-01-01|    10:08:56|         113|         140|      3.68|      931|     12.75|\n|           HV0003|              B03404| 2022-01-01|   09:08:58|  2022-01-01|    09:23:01|         151|          75|      2.77|      843|     11.47|\n|           HV0003|              B03404| 2022-01-01|   09:32:25|  2022-01-01|    09:44:15|         263|         229|      2.04|      710|      9.55|\n|           HV0003|              B03404| 2022-01-01|   09:50:23|  2022-01-01|    10:15:30|         237|         169|      8.79|     1507|     23.67|\n|           HV0003|              B03404| 2022-01-01|   09:17:02|  2022-01-01|    09:40:09|         261|         223|     11.29|     1387|     25.17|\n|           HV0003|              B03404| 2022-01-01|   09:43:20|  2022-01-01|    09:47:31|         223|         223|      0.87|      251|      6.51|\n|           HV0003|              B03404| 2022-01-01|   09:52:29|  2022-01-01|    10:01:48|         223|           7|      1.89|      559|      7.89|\n|           HV0003|              B03404| 2022-01-01|   09:12:03|  2022-01-01|    09:35:07|         246|         243|       9.2|     1384|     22.69|\n|           HV0003|              B03404| 2022-01-01|   09:58:26|  2022-01-01|    10:07:23|         243|         127|      1.88|      537|     10.02|\n|           HV0003|              B03404| 2022-01-01|   09:28:15|  2022-01-01|    09:38:52|         223|         179|      1.69|      637|      9.55|\n|           HV0003|              B03404| 2022-01-01|   09:45:55|  2022-01-01|    09:53:47|         179|           7|      0.87|      472|      9.22|\n|           HV0003|              B03404| 2022-01-01|   09:55:30|  2022-01-01|    10:03:26|           7|          82|      2.59|      476|      8.49|\n|           HV0003|              B03404| 2022-01-01|   09:30:45|  2022-01-01|    09:43:22|         165|         165|      1.71|      757|       8.6|\n|           HV0003|              B03404| 2022-01-01|   09:47:30|  2022-01-01|    10:06:49|         165|          72|      3.51|     1159|     13.95|\n+-----------------+--------------------+-----------+-----------+------------+------------+------------+------------+----------+---------+----------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663240856746_1935764461",
+      "id": "paragraph_1663240856746_1935764461",
+      "dateCreated": "2022-09-15 20:20:56.747",
+      "dateStarted": "2022-09-16 01:43:11.086",
+      "dateFinished": "2022-09-16 01:43:11.681",
+      "status": "FINISHED"
+    },
+    {
+      "text": "from pyspark.sql.functions import mean\n\nuber_df.groupBy(\u0027pickup_date\u0027)\\\n    .agg(mean(\u0027driver_pay\u0027)\\\n        ,mean(\u0027trip_time\u0027)/60\\\n        ,mean(\u0027trip_miles\u0027)*1.60934)\\\n    .sort(\u0027pickup_date\u0027)\\\n    .show()",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:11.686",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------+------------------+---------------------+---------------------------+\n|pickup_date|   avg(driver_pay)|(avg(trip_time) / 60)|(avg(trip_miles) * 1.60934)|\n+-----------+------------------+---------------------+---------------------------+\n| 2022-01-01|18.311965449378523|   15.718048931701876|           8.45806530997286|\n| 2022-01-02| 15.71841415539866|   15.633096294819914|          8.120248774589735|\n| 2022-01-03|15.746259215549944|   16.297767962513017|          8.162896023814165|\n| 2022-01-04|15.206701261160802|    16.04177795747951|          7.619658788675241|\n| 2022-01-05|15.282020004886412|   16.485169921561116|          7.436207622572699|\n| 2022-01-06|15.163492727820666|    16.40604551517192|         7.5433894748746075|\n| 2022-01-07|15.732422918321404|   16.331775884101102|          7.267340285556158|\n| 2022-01-08|14.540839017589846|    15.24288142161401|          7.194428443023416|\n| 2022-01-09|14.816179170018668|   15.517622748073633|          7.378031212706078|\n| 2022-01-10|15.567370037059513|   16.548111738738825|          7.626509870532226|\n| 2022-01-11|15.142712282048898|   16.438392062436172|         7.0119336184652035|\n| 2022-01-12|15.126262934233543|   16.499562366915246|          7.017612153916768|\n| 2022-01-13|15.840837190480551|   17.371978947805292|         7.3833058716996955|\n| 2022-01-14|16.538333045967022|   18.094379787042463|          7.680378507768631|\n| 2022-01-15|15.441183158843165|    16.57225431379539|          7.193945917364739|\n| 2022-01-16| 15.07251025337905|   15.635488736679076|          7.171350202020315|\n| 2022-01-17|15.631111011943236|    15.79666054380247|          7.423289717886901|\n| 2022-01-18|15.913541277906267|    17.08140949780487|           7.70480566394599|\n| 2022-01-19|15.807346312174863|   17.648114797866594|          7.344072410163102|\n| 2022-01-20| 16.01250904303998|   17.643302521081182|          7.241556441975373|\n+-----------+------------------+---------------------+---------------------------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663241314386_823049974",
+      "id": "paragraph_1663241314386_823049974",
+      "dateCreated": "2022-09-15 20:28:34.387",
+      "dateStarted": "2022-09-16 01:43:11.697",
+      "dateFinished": "2022-09-16 01:43:21.878",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\n**해석**\nUber 택시의 2022년 1월 평균 요금은 $15 정도, 평균 이동시간은 15min 정도, 평균 거리는 7km 정도로 보인다.",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:21.921",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003e\u003cstrong\u003e해석\u003c/strong\u003e\u003cbr /\u003e\nUber 택시의 2022년 1월 평균 요금은 $15 정도, 평균 이동시간은 15min 정도, 평균 거리는 7km 정도로 보인다.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663256913832_1084935331",
+      "id": "paragraph_1663256913832_1084935331",
+      "dateCreated": "2022-09-16 00:48:33.832",
+      "dateStarted": "2022-09-16 01:43:21.927",
+      "dateFinished": "2022-09-16 01:43:21.938",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\n## 시계열 분석",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:22.026",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003e시계열 분석\u003c/h2\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663255557361_798187582",
+      "id": "paragraph_1663255557361_798187582",
+      "dateCreated": "2022-09-16 00:25:57.362",
+      "dateStarted": "2022-09-16 01:43:22.030",
+      "dateFinished": "2022-09-16 01:43:22.036",
+      "status": "FINISHED"
+    },
+    {
+      "text": "daily_trip_df \u003d selected_df.groupBy(\u0027pickup_date\u0027).count()\ndaily_trip_df.sort(\u0027pickup_date\u0027).show()",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:22.131",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------+------+\n|pickup_date| count|\n+-----------+------+\n| 2022-01-01|302904|\n| 2022-01-02|388980|\n| 2022-01-03|398649|\n| 2022-01-04|399186|\n| 2022-01-05|400057|\n| 2022-01-06|392788|\n| 2022-01-07|426774|\n| 2022-01-08|513628|\n| 2022-01-09|517986|\n| 2022-01-10|421789|\n| 2022-01-11|432730|\n| 2022-01-12|442295|\n| 2022-01-13|435360|\n| 2022-01-14|473356|\n| 2022-01-15|583486|\n| 2022-01-16|591647|\n| 2022-01-17|470219|\n| 2022-01-18|426008|\n| 2022-01-19|438112|\n| 2022-01-20|472509|\n+-----------+------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663229344605_1324935270",
+      "id": "paragraph_1663229344605_1324935270",
+      "dateCreated": "2022-09-15 17:09:04.605",
+      "dateStarted": "2022-09-16 01:43:22.136",
+      "dateFinished": "2022-09-16 01:43:31.303",
+      "status": "FINISHED"
+    },
+    {
+      "text": "z.show(daily_trip_pdf)",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 02:06:49.293",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "stackedAreaChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "pickup_date": "string",
+                      "count": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "rotate",
+                  "style": "stack"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "pickup_date",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "count",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "pickup_date\tcount\n2022-01-20\t472509\n2022-01-18\t426008\n2022-01-17\t470219\n2022-01-02\t388980\n2022-01-23\t620818\n2022-01-14\t473356\n2022-01-03\t398649\n2022-01-25\t420625\n2022-01-21\t531198\n2022-01-09\t517986\n2022-01-13\t435360\n2022-01-22\t633395\n2022-01-31\t513372\n2022-02-01\t228705\n2022-01-06\t392788\n2022-01-08\t513628\n2022-01-11\t432730\n2022-01-10\t421789\n2022-01-15\t583486\n2022-01-19\t438112\n2022-01-28\t546795\n2022-01-04\t399186\n2022-01-26\t461600\n2022-01-30\t433092\n2022-01-12\t442295\n2022-01-01\t302904\n2022-01-27\t505222\n2022-01-07\t426774\n2022-01-29\t467832\n2022-01-05\t400057\n2022-01-24\t460474\n2022-01-16\t591647\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663261553309_1299417872",
+      "id": "paragraph_1663261553309_1299417872",
+      "dateCreated": "2022-09-16 02:05:53.309",
+      "dateStarted": "2022-09-16 02:06:05.291",
+      "dateFinished": "2022-09-16 02:06:05.300",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\n**해석**\n일별로 Trip 수를 보면 일별 Trend는 파악하기 쉽지 않다. \n하지만 주별 요일별 Trend를 만들면 좀 더 직관적이고, Insight를 얻을 수 있을 것 같다.",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:40.279",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003e\u003cstrong\u003e해석\u003c/strong\u003e\u003cbr /\u003e\n일별로 Trip 수를 보면 일별 Trend는 파악하기 쉽지 않다.\u003cbr /\u003e\n하지만 주별 요일별 Trend를 만들면 좀 더 직관적이고, Insight를 얻을 수 있을 것 같다.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663250741045_1344509949",
+      "id": "paragraph_1663250741045_1344509949",
+      "dateCreated": "2022-09-15 23:05:41.046",
+      "dateStarted": "2022-09-16 01:43:40.285",
+      "dateFinished": "2022-09-16 01:43:40.294",
+      "status": "FINISHED"
+    },
+    {
+      "text": "from pyspark.sql.functions import date_format, dayofweek, weekofyear, concat, lit\nspark.sql(\u0027set spark.sql.legacy.timeParserPolicy\u003dLEGACY\u0027)\n\ndow_trip_pdf \u003d daily_trip_df\\\n    .withColumn(\u0027weekday\u0027, date_format(\u0027pickup_date\u0027, \u0027EEE\u0027))\\\n    .withColumn(\u0027dow\u0027, dayofweek(\u0027pickup_date\u0027))\\\n    .withColumn(\u0027wom\u0027, concat(lit(\u0027W\u0027), date_format(\u0027pickup_date\u0027, \u0027W\u0027)))\\\n    .toPandas()\ndow_trip_pdf",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 02:22:50.561",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "editorHide": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "pickup_date": "string",
+                      "count": "string",
+                      "weekday": "string",
+                      "dow": "string",
+                      "wom": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "   pickup_date   count weekday  dow wom\n0   2022-01-20  472509     Thu    5  W4\n1   2022-01-18  426008     Tue    3  W4\n2   2022-01-17  470219     Mon    2  W4\n3   2022-01-02  388980     Sun    1  W2\n4   2022-01-23  620818     Sun    1  W5\n5   2022-01-14  473356     Fri    6  W3\n6   2022-01-03  398649     Mon    2  W2\n7   2022-01-25  420625     Tue    3  W5\n8   2022-01-21  531198     Fri    6  W4\n9   2022-01-09  517986     Sun    1  W3\n10  2022-01-13  435360     Thu    5  W3\n11  2022-01-22  633395     Sat    7  W4\n12  2022-01-31  513372     Mon    2  W6\n13  2022-02-01  228705     Tue    3  W1\n14  2022-01-06  392788     Thu    5  W2\n15  2022-01-08  513628     Sat    7  W2\n16  2022-01-11  432730     Tue    3  W3\n17  2022-01-10  421789     Mon    2  W3\n18  2022-01-15  583486     Sat    7  W3\n19  2022-01-19  438112     Wed    4  W4\n20  2022-01-28  546795     Fri    6  W5\n21  2022-01-04  399186     Tue    3  W2\n22  2022-01-26  461600     Wed    4  W5\n23  2022-01-30  433092     Sun    1  W6\n24  2022-01-12  442295     Wed    4  W3\n25  2022-01-01  302904     Sat    7  W1\n26  2022-01-27  505222     Thu    5  W5\n27  2022-01-07  426774     Fri    6  W2\n28  2022-01-29  467832     Sat    7  W5\n29  2022-01-05  400057     Wed    4  W2\n30  2022-01-24  460474     Mon    2  W5\n31  2022-01-16  591647     Sun    1  W4\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663250878755_936758092",
+      "id": "paragraph_1663250878755_936758092",
+      "dateCreated": "2022-09-15 23:07:58.755",
+      "dateStarted": "2022-09-16 02:22:50.564",
+      "dateFinished": "2022-09-16 02:22:59.037",
+      "status": "FINISHED"
+    },
+    {
+      "text": "z.show(dow_trip_pdf)",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 02:23:08.764",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "lineChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "pickup_date": "string",
+                      "count": "string",
+                      "weekday": "string",
+                      "dow": "string",
+                      "wom": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "forceY": false,
+                  "lineWithFocus": false,
+                  "isDateFormat": false
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "dow",
+                  "index": 3.0,
+                  "aggr": "sum"
+                },
+                {
+                  "name": "weekday",
+                  "index": 2.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [
+                {
+                  "name": "wom",
+                  "index": 4.0,
+                  "aggr": "sum"
+                }
+              ],
+              "values": [
+                {
+                  "name": "count",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "pickup_date\tcount\tweekday\tdow\twom\n2022-01-20\t472509\tThu\t5\tW4\n2022-01-18\t426008\tTue\t3\tW4\n2022-01-17\t470219\tMon\t2\tW4\n2022-01-02\t388980\tSun\t1\tW2\n2022-01-23\t620818\tSun\t1\tW5\n2022-01-14\t473356\tFri\t6\tW3\n2022-01-03\t398649\tMon\t2\tW2\n2022-01-25\t420625\tTue\t3\tW5\n2022-01-21\t531198\tFri\t6\tW4\n2022-01-09\t517986\tSun\t1\tW3\n2022-01-13\t435360\tThu\t5\tW3\n2022-01-22\t633395\tSat\t7\tW4\n2022-01-31\t513372\tMon\t2\tW6\n2022-02-01\t228705\tTue\t3\tW1\n2022-01-06\t392788\tThu\t5\tW2\n2022-01-08\t513628\tSat\t7\tW2\n2022-01-11\t432730\tTue\t3\tW3\n2022-01-10\t421789\tMon\t2\tW3\n2022-01-15\t583486\tSat\t7\tW3\n2022-01-19\t438112\tWed\t4\tW4\n2022-01-28\t546795\tFri\t6\tW5\n2022-01-04\t399186\tTue\t3\tW2\n2022-01-26\t461600\tWed\t4\tW5\n2022-01-30\t433092\tSun\t1\tW6\n2022-01-12\t442295\tWed\t4\tW3\n2022-01-01\t302904\tSat\t7\tW1\n2022-01-27\t505222\tThu\t5\tW5\n2022-01-07\t426774\tFri\t6\tW2\n2022-01-29\t467832\tSat\t7\tW5\n2022-01-05\t400057\tWed\t4\tW2\n2022-01-24\t460474\tMon\t2\tW5\n2022-01-16\t591647\tSun\t1\tW4\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663261520272_1692172061",
+      "id": "paragraph_1663261520272_1692172061",
+      "dateCreated": "2022-09-16 02:05:20.272",
+      "dateStarted": "2022-09-16 02:23:08.767",
+      "dateFinished": "2022-09-16 02:23:08.776",
+      "status": "FINISHED"
+    },
+    {
+      "text": "sns.lineplot(dow_trip_pdf, x\u003d\u0027dow\u0027, y\u003d\u0027count\u0027, hue\u003d\u0027wom\u0027)",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 02:23:54.356",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u003cAxesSubplot:xlabel\u003d\u0027dow\u0027, ylabel\u003d\u0027count\u0027\u003e\n"
+          },
+          {
+            "type": "HTML",
+            "data": "\u003cdiv style\u003d\u0027width:auto;height:auto\u0027\u003e\u003cimg src\u003ddata:image/png;base64,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\u003d style\u003d\u0027width\u003dauto;height:auto\u0027\u003e\u003cdiv\u003e\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663251838247_1134961720",
+      "id": "paragraph_1663251838247_1134961720",
+      "dateCreated": "2022-09-15 23:23:58.247",
+      "dateStarted": "2022-09-16 02:23:54.359",
+      "dateFinished": "2022-09-16 02:23:54.605",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\n**해석**\n주별 Trend를 보면 토, 일에 Trip 수가 많은 것을 확인할 수가 있다.\n일별 Trend에서 보여지는 Pattern은 주별 Trend의 반복 패턴이라고 볼 수 있을 것 같다.\n\n**분석 확장**\n더 나아가 시간대별 분석을 추가로 해보면 좋을 것 같다.\n평일 중간에서 월, 금으로 갈수록 Trip 수가 증가하는 것을 볼 수 있다.\n시간대별 분석을 추가로 하면 평일 시간대별, 주말 시간대별 수요를 파악할 수 있고, \n탄력적인 배차 대수 조절같은 서비스 품질을 향상시킬 수 있는 Insight를 얻을 수 있을 것이다. \n\n**가설**\n미국 문화이기 때문에 다를 수도 있지만 가정을 세워보면 \n월요일에는 출근 시간대에 택시 수요가 몰려 Trip 수가 증가했고,\n금요일에는 회식 후 귀가할 때의 택시 수요로 인해 Trip 수가 증가하지 않았을까이다.\n평일 중간에는 직장 및 학교 생활에 충실히 임한 것으로 보인다.",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:49.324",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003e\u003cstrong\u003e해석\u003c/strong\u003e\u003cbr /\u003e\n주별 Trend를 보면 토, 일에 Trip 수가 많은 것을 확인할 수가 있다.\u003cbr /\u003e\n일별 Trend에서 보여지는 Pattern은 주별 Trend의 반복 패턴이라고 볼 수 있을 것 같다.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e분석 확장\u003c/strong\u003e\u003cbr /\u003e\n더 나아가 시간대별 분석을 추가로 해보면 좋을 것 같다.\u003cbr /\u003e\n평일 중간에서 월, 금으로 갈수록 Trip 수가 증가하는 것을 볼 수 있다.\u003cbr /\u003e\n시간대별 분석을 추가로 하면 평일 시간대별, 주말 시간대별 수요를 파악할 수 있고,\u003cbr /\u003e\n탄력적인 배차 대수 조절같은 서비스 품질을 향상시킬 수 있는 Insight를 얻을 수 있을 것이다.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e가설\u003c/strong\u003e\u003cbr /\u003e\n미국 문화이기 때문에 다를 수도 있지만 가정을 세워보면\u003cbr /\u003e\n월요일에는 출근 시간대에 택시 수요가 몰려 Trip 수가 증가했고,\u003cbr /\u003e\n금요일에는 회식 후 귀가할 때의 택시 수요로 인해 Trip 수가 증가하지 않았을까이다.\u003cbr /\u003e\n평일 중간에는 직장 및 학교 생활에 충실히 임한 것으로 보인다.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663253850860_1552571578",
+      "id": "paragraph_1663253850860_1552571578",
+      "dateCreated": "2022-09-15 23:57:30.861",
+      "dateStarted": "2022-09-16 01:43:49.330",
+      "dateFinished": "2022-09-16 01:43:49.340",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\n# Zone별 분석",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:49.429",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eZone별 분석\u003c/h1\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663249926203_646425948",
+      "id": "paragraph_1663249926203_646425948",
+      "dateCreated": "2022-09-15 22:52:06.203",
+      "dateStarted": "2022-09-16 01:43:49.436",
+      "dateFinished": "2022-09-16 01:43:49.442",
+      "status": "FINISHED"
+    },
+    {
+      "text": "selected_df.createOrReplaceTempView(\u0027taxi_trip\u0027)\nspark.sql(\u0027\u0027\u0027\n    SELECT \n        * \n    FROM taxi_trip\n\u0027\u0027\u0027).show()",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:49.536",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------------+--------------------+-----------+-----------+------------+------------+------------+------------+----------+---------+----------+\n|hvfhs_license_num|dispatching_base_num|pickup_date|pickup_time|dropoff_date|dropoff_time|PULocationID|DOLocationID|trip_miles|trip_time|driver_pay|\n+-----------------+--------------------+-----------+-----------+------------+------------+------------+------------+----------+---------+----------+\n|           HV0003|              B03404| 2022-01-01|   09:07:24|  2022-01-01|    09:18:28|         170|         161|      1.18|      664|     23.03|\n|           HV0003|              B03404| 2022-01-01|   09:22:32|  2022-01-01|    09:30:12|         237|         161|      0.82|      460|     12.32|\n|           HV0003|              B03404| 2022-01-01|   09:57:37|  2022-01-01|    10:07:32|         237|         161|      1.18|      595|      23.3|\n|           HV0003|              B03404| 2022-01-01|   09:18:02|  2022-01-01|    09:23:05|         262|         229|      1.65|      303|       6.3|\n|           HV0003|              B03404| 2022-01-01|   09:28:01|  2022-01-01|    09:35:42|         229|         141|      1.65|      461|      7.44|\n|           HV0003|              B03404| 2022-01-01|   09:38:50|  2022-01-01|    09:51:32|         263|          79|      4.51|      762|     12.25|\n|           HV0003|              B03404| 2022-01-01|   09:53:25|  2022-01-01|    10:08:56|         113|         140|      3.68|      931|     12.75|\n|           HV0003|              B03404| 2022-01-01|   09:08:58|  2022-01-01|    09:23:01|         151|          75|      2.77|      843|     11.47|\n|           HV0003|              B03404| 2022-01-01|   09:32:25|  2022-01-01|    09:44:15|         263|         229|      2.04|      710|      9.55|\n|           HV0003|              B03404| 2022-01-01|   09:50:23|  2022-01-01|    10:15:30|         237|         169|      8.79|     1507|     23.67|\n|           HV0003|              B03404| 2022-01-01|   09:17:02|  2022-01-01|    09:40:09|         261|         223|     11.29|     1387|     25.17|\n|           HV0003|              B03404| 2022-01-01|   09:43:20|  2022-01-01|    09:47:31|         223|         223|      0.87|      251|      6.51|\n|           HV0003|              B03404| 2022-01-01|   09:52:29|  2022-01-01|    10:01:48|         223|           7|      1.89|      559|      7.89|\n|           HV0005|              B03406| 2022-01-01|   09:45:34|  2022-01-01|    09:54:11|          88|         148|     3.585|      810|     21.08|\n|           HV0003|              B03404| 2022-01-01|   09:12:03|  2022-01-01|    09:35:07|         246|         243|       9.2|     1384|     22.69|\n|           HV0003|              B03404| 2022-01-01|   09:58:26|  2022-01-01|    10:07:23|         243|         127|      1.88|      537|     10.02|\n|           HV0005|              B03406| 2022-01-01|   09:34:59|  2022-01-01|    09:50:15|         239|         170|     2.699|      916|     10.66|\n|           HV0005|              B03406| 2022-01-01|   09:58:09|  2022-01-01|    10:28:23|         170|         265|     8.037|     1904|     26.63|\n|           HV0003|              B03404| 2022-01-01|   09:28:15|  2022-01-01|    09:38:52|         223|         179|      1.69|      637|      9.55|\n|           HV0003|              B03404| 2022-01-01|   09:45:55|  2022-01-01|    09:53:47|         179|           7|      0.87|      472|      9.22|\n+-----------------+--------------------+-----------+-----------+------------+------------+------------+------------+----------+---------+----------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663230558928_349746520",
+      "id": "paragraph_1663230558928_349746520",
+      "dateCreated": "2022-09-15 17:29:18.929",
+      "dateStarted": "2022-09-16 01:43:49.540",
+      "dateFinished": "2022-09-16 01:43:50.117",
+      "status": "FINISHED"
+    },
+    {
+      "text": "# zone master dataset 추가\nzone_df \u003d spark.read.csv(DATA_HOME + \"/taxi+_zone_lookup.csv\", header\u003dTrue, inferSchema\u003dTrue)\nzone_df.dtypes",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:50.140",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "[(\u0027LocationID\u0027, \u0027int\u0027), (\u0027Borough\u0027, \u0027string\u0027), (\u0027Zone\u0027, \u0027string\u0027), (\u0027service_zone\u0027, \u0027string\u0027)]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663239435616_391899721",
+      "id": "paragraph_1663239435616_391899721",
+      "dateCreated": "2022-09-15 19:57:15.620",
+      "dateStarted": "2022-09-16 01:43:50.147",
+      "dateFinished": "2022-09-16 01:43:50.705",
+      "status": "FINISHED"
+    },
+    {
+      "text": "zone_df.show()",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:50.747",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+-------------+--------------------+------------+\n|LocationID|      Borough|                Zone|service_zone|\n+----------+-------------+--------------------+------------+\n|         1|          EWR|      Newark Airport|         EWR|\n|         2|       Queens|         Jamaica Bay|   Boro Zone|\n|         3|        Bronx|Allerton/Pelham G...|   Boro Zone|\n|         4|    Manhattan|       Alphabet City| Yellow Zone|\n|         5|Staten Island|       Arden Heights|   Boro Zone|\n|         6|Staten Island|Arrochar/Fort Wad...|   Boro Zone|\n|         7|       Queens|             Astoria|   Boro Zone|\n|         8|       Queens|        Astoria Park|   Boro Zone|\n|         9|       Queens|          Auburndale|   Boro Zone|\n|        10|       Queens|        Baisley Park|   Boro Zone|\n|        11|     Brooklyn|          Bath Beach|   Boro Zone|\n|        12|    Manhattan|        Battery Park| Yellow Zone|\n|        13|    Manhattan|   Battery Park City| Yellow Zone|\n|        14|     Brooklyn|           Bay Ridge|   Boro Zone|\n|        15|       Queens|Bay Terrace/Fort ...|   Boro Zone|\n|        16|       Queens|             Bayside|   Boro Zone|\n|        17|     Brooklyn|             Bedford|   Boro Zone|\n|        18|        Bronx|        Bedford Park|   Boro Zone|\n|        19|       Queens|           Bellerose|   Boro Zone|\n|        20|        Bronx|             Belmont|   Boro Zone|\n+----------+-------------+--------------------+------------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663257187454_376141351",
+      "id": "paragraph_1663257187454_376141351",
+      "dateCreated": "2022-09-16 00:53:07.454",
+      "dateStarted": "2022-09-16 01:43:50.756",
+      "dateFinished": "2022-09-16 01:43:50.894",
+      "status": "FINISHED"
+    },
+    {
+      "text": "zone_df.filter((zone_df.LocationID \u003d\u003d 170) | (zone_df.LocationID \u003d\u003d 161)).show()",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:50.955",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+---------+--------------+------------+\n|LocationID|  Borough|          Zone|service_zone|\n+----------+---------+--------------+------------+\n|       161|Manhattan|Midtown Center| Yellow Zone|\n|       170|Manhattan|   Murray Hill| Yellow Zone|\n+----------+---------+--------------+------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663239855369_404947497",
+      "id": "paragraph_1663239855369_404947497",
+      "dateCreated": "2022-09-15 20:04:15.370",
+      "dateStarted": "2022-09-16 01:43:50.961",
+      "dateFinished": "2022-09-16 01:43:51.097",
+      "status": "FINISHED"
+    },
+    {
+      "text": "zone_df.createOrReplaceTempView(\u0027taxi_zone\u0027)",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:51.160",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663242826810_1067556660",
+      "id": "paragraph_1663242826810_1067556660",
+      "dateCreated": "2022-09-15 20:53:46.815",
+      "dateStarted": "2022-09-16 01:43:51.165",
+      "dateFinished": "2022-09-16 01:43:51.182",
+      "status": "FINISHED"
+    },
+    {
+      "text": "cnt_by_zone_df \u003d spark.sql(\u0027\u0027\u0027\n    WITH trip_record AS (\n        SELECT\n            hvfhs_license_num,\n            pickup_date,\n            pickup_time,\n            dropoff_date,\n            dropoff_time,\n            puz.Borough as PUBorough,\n            puz.Zone as PUZone,\n            puz.service_zone as PUService_zone,\n            doz.Borough as DOBorough,\n            doz.Zone as DOZone,\n            doz.service_zone as DOService_zone\n        FROM taxi_trip t\n            LEFT JOIN taxi_zone puz\n                ON t.PULocationID \u003d puz.LocationID\n            LEFT JOIN taxi_zone doz\n                ON t.DOLocationID \u003d doz.LocationID\n    )\n    SELECT\n        PUBorough,\n        COUNT(*) AS Trip\n    FROM trip_record\n    GROUP BY PUBorough\n\u0027\u0027\u0027)",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:55:04.632",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663242879376_1273860394",
+      "id": "paragraph_1663242879376_1273860394",
+      "dateCreated": "2022-09-15 20:54:39.377",
+      "dateStarted": "2022-09-16 01:55:04.638",
+      "dateFinished": "2022-09-16 01:55:04.669",
+      "status": "FINISHED"
+    },
+    {
+      "text": "cnt_by_zone_pdf \u003d cnt_by_zone_df.toPandas()\nz.show(cnt_by_zone_pdf)",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 02:24:14.180",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true,
+          "completionKey": "TAB"
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9.0,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "PUBorough0",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "Trip1",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {
+                          "priority": 0.0,
+                          "direction": "desc"
+                        },
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1.0,
+                      "paginationPageSize": 250.0
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "names": {
+                      "PUBorough": "string",
+                      "Trip": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "PUBorough",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "Trip",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "PUBorough\tTrip\nQueens\t2878342\nUnknown\t748\nBrooklyn\t4030366\nStaten Island\t210077\nManhattan\t5758201\nBronx\t1873857\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663242939729_1233304847",
+      "id": "paragraph_1663242939729_1233304847",
+      "dateCreated": "2022-09-15 20:55:39.729",
+      "dateStarted": "2022-09-16 02:05:12.628",
+      "dateFinished": "2022-09-16 02:05:12.678",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%md\n\n**해석**\n맨해튼(Manhattan)과 브루클린(Brooklyn)에서 택시를 많이 타는 것을 볼 수 있다.",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 01:43:53.684",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionSupport": false
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9.0,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003cp\u003e\u003cstrong\u003e해석\u003c/strong\u003e\u003cbr /\u003e\n맨해튼(Manhattan)과 브루클린(Brooklyn)에서 택시를 많이 타는 것을 볼 수 있다.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663249193787_799523524",
+      "id": "paragraph_1663249193787_799523524",
+      "dateCreated": "2022-09-15 22:39:53.788",
+      "dateStarted": "2022-09-16 01:43:53.700",
+      "dateFinished": "2022-09-16 01:43:53.706",
+      "status": "FINISHED"
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-16 02:04:43.782",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1663257693904_1241336698",
+      "id": "paragraph_1663257693904_1241336698",
+      "dateCreated": "2022-09-16 01:01:33.904",
+      "dateStarted": "2022-09-16 01:43:53.804",
+      "dateFinished": "2022-09-16 01:43:53.809",
+      "status": "FINISHED"
+    }
+  ],
+  "name": "TLC Taxi Record",
+  "id": "2HDU495ZA",
+  "defaultInterpreterGroup": "python",
+  "version": "0.10.1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {
+    "isRunning": false
+  }
+}
